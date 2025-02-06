@@ -86,7 +86,7 @@ readonly class DirectoryClassFinderComposerPSR4 implements DirectoryClassFinderI
             '/\.php$/'
         );
         foreach ($regexIterator as $file) {
-            yield $file->getPathname();
+            yield realpath($file->getPathname());
         }
     }
 
